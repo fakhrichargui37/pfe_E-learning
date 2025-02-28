@@ -14,12 +14,12 @@ return new class extends Migration
         Schema::create('formation_formateur', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('formation_id');
-            $table->unsignedBigInteger('formateur_id');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
 
             // Foreign keys
             $table->foreign('formation_id')->references('id')->on('formations')->onDelete('cascade');
-            $table->foreign('formateur_id')->references('id')->on('formateurs')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

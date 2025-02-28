@@ -17,6 +17,6 @@ class Formation extends Model
 
     public function formateurs()
     {
-        return $this->belongsToMany(Formateur::class, 'formation_formateur');
+        return $this->belongsToMany(user::class, 'formation_formateur');
     }
 }

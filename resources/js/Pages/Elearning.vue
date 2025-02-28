@@ -6,7 +6,7 @@ const courses = ref([
     { 
         title: "Vue.js Basics", 
         description: "Learn the fundamentals of Vue.js.", 
-        image: "https://source.unsplash.com/400x250/?technology",
+        image: "/images/vuejs.png",
         price: "$49.99",
         progress: 45,
         rating: 4.5,
@@ -15,7 +15,7 @@ const courses = ref([
     { 
         title: "Laravel API Development", 
         description: "Build APIs with Laravel.", 
-        imageUrl:"/images/laravel.jpg",
+        image:"/images/laravel.jpg",
         price: "$59.99",
         progress: 75,
         rating: 4.8,
@@ -24,7 +24,7 @@ const courses = ref([
     { 
         title: "Photography Basics", 
         description: "Master the art of photography.", 
-        image: "https://source.unsplash.com/400x250/?photography",
+        image: "/images/aperture.webp",
         price: "Free",
         progress: 100,
         rating: 5.0,
@@ -55,7 +55,7 @@ const recommendedCourses = computed(() => courses.value.filter(c => !c.completed
             <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">Popular Courses</h2>
             <div class="grid md:grid-cols-3 gap-6">
                 <div v-for="course in courses" :key="course.title" class="bg-white shadow-lg p-4 rounded-lg">
-                    <img :src="course.imageUrl" alt="Course" class="rounded-t-lg w-full h-40 object-cover">
+                    <img :src="course.image" alt="Course" class="rounded-t-lg w-full h-40 object-cover">
                     <div class="p-4">
                         <h3 class="text-lg font-semibold">{{ course.title }}</h3>
                         <p class="text-gray-600 text-sm mt-1">{{ course.description }}</p>
