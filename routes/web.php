@@ -26,6 +26,10 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+Route::get('/dashboardAdmin', function () {
+    return Inertia::render('DashboardAdmin');
+})->middleware(['auth'])->name('dashboardAdmin');
+
 
 require __DIR__.'/auth.php';
 
